@@ -20,9 +20,9 @@ public class MyController {
 	@Autowired
 	NotesService noteService;
 	
-	@GetMapping("/home")
-	public String home() {
-		return "Welcome to Notes Rest API, developed by <a href=\"https://sahil-asheikh.github.io\">Sahil A. Sheikh</a>";
+	@GetMapping("/")
+	public String welcome() {
+		return "<html><body>" + "<h1>Welcome to Notes Rest API, developed by <a href=\"https://sahil-asheikh.github.io\">Sahil A. Sheikh</a></h1>" + "</body></html>";
 	}
 	
 	@PostMapping("/notes")
@@ -35,8 +35,8 @@ public class MyController {
 		return noteService.getNotes();
 	}
 	
-	@GetMapping("/notes/{notes}")
-	public TblNotes notes(@PathVariable int id) {
+	@GetMapping("/notes/{id}")
+	public TblNotes notes(@PathVariable Integer id) {
 		return noteService.getNote(id);
 	}
 	
@@ -45,8 +45,8 @@ public class MyController {
 		return noteService.updateNote(notes);
 	}
 	
-	@DeleteMapping("/deleteNote/{notes}")
-	public void deleteNote(@PathVariable int id) {
+	@DeleteMapping("/deleteNote/{id}")
+	public void deleteNote(@PathVariable Integer id) {
 		noteService.deleteNote(id);
 	}
 	

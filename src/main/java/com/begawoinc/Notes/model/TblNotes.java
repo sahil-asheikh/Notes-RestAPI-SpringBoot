@@ -21,6 +21,7 @@ public class TblNotes {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
+	
 	@Column(name="notes_primary_key", nullable = false, length = 45)
 	private String notes_primary_key;
 	@Column(name="title", nullable = false, length = 2000)
@@ -31,6 +32,7 @@ public class TblNotes {
 	private String folder;
 	@Column(name="is_deleted", nullable = true)
 	private int is_deleted;
+	
 	@CreationTimestamp
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "created_at", nullable = false)

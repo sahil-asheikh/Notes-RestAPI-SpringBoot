@@ -26,7 +26,7 @@ public class NotesServiceImplement implements NotesService {
 
 	@Override
 	public TblNotes getNote(int id) {
-		return notesDao.getOne(id);
+		return notesDao.findById(id);
 	}
 
 	@Override
@@ -36,8 +36,7 @@ public class NotesServiceImplement implements NotesService {
 
 	@Override
 	public void deleteNote(int id) {
-		TblNotes note = notesDao.getOne(id);
-		notesDao.delete(note);
+		notesDao.deleteById(id);
 	}
 	
 }
