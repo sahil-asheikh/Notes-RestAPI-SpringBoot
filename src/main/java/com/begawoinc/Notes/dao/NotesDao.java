@@ -9,5 +9,6 @@ import com.begawoinc.Notes.model.TblNotes;
 public interface NotesDao extends JpaRepository<TblNotes, Integer> {
 	
 	TblNotes findById(int id);
+//	TblNotes findByNotes_primary_key(String notes_primary_key);
 	
 }

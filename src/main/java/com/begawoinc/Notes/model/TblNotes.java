@@ -19,7 +19,7 @@ import org.hibernate.annotations.UpdateTimestamp;
 public class TblNotes {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
 	@Column(name="notes_primary_key", nullable = false, length = 45)
